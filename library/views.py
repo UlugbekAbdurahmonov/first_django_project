@@ -12,4 +12,20 @@ class BookListApiView(generics.ListAPIView):
 class BookDetailApiView(generics.RetrieveAPIView):
     queryset = Books.objects.all()
     serializer_class = BoockSerializer
-    lookup_field = 'title'
+    lookup_field = 'id'
+
+class BookDeleteApiView(generics.DestroyAPIView):
+    queryset = Books.objects.all()
+    serializer_class = BoockSerializer
+
+class BookUpdateApiViwe(generics.UpdateAPIView):
+    queryset = Books.objects.all()
+    serializer_class = BoockSerializer
+
+class BookCreateApiView(generics.CreateAPIView):
+    queryset = Books.objects.all()
+    serializer_class = BoockSerializer
+
+class BookMixedApiView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Books.objects.all()
+    serializer_class = BoockSerializer
